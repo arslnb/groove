@@ -1,22 +1,24 @@
-###########################
-####      GR00VE      #####
-####       v0.1       #####
-###########################
+logo = """
+
+   ___                      
+  / __|_ _ ___  _____ _____ 
+ | (_ | '_/ _ \/ _ \ V / -_)
+  \___|_| \___/\___/\_/\___|
+                            
+
+"""
 
 
 import click
 import time
+import os
+from colorama import init, Fore, Back, Style
+init()
+
 
 @click.command()
 def hello():
-	print("Hello")
-
-@click.command()
-@click.option('--count', default=1, help='number of greetings')
-@click.argument('name')
-def hello(count, name):
-    for x in range(count):
-        print('Hello %s!' % name)
+	print(Fore.WHITE + logo)
 
 if __name__ == '__main__':
 	hello()

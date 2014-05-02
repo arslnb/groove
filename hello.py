@@ -1,22 +1,13 @@
-###########################
-####      GR00VE      #####
-####       v0.1       #####
-###########################
+import sys
+from flask import Flask
+app = Flask(__name__)
 
-
-import click
-import time
-
-@click.command()
+@app.route("/")
 def hello():
-	print("Hello")
+    if sys.platform == "darwin":
+    	return "Nice Mac"
+    elif sys.platform == "cygwin":
+    	return "Fuckin windows"
 
-@click.command()
-@click.option('--count', default=1, help='number of greetings')
-@click.argument('name')
-def hello(count, name):
-    for x in range(count):
-        print('Hello %s!' % name)
-
-if __name__ == '__main__':
-	hello()
+if __name__ == "__main__":
+    app.run()
