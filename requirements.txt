@@ -5,4 +5,5 @@ Werkzeug==0.9.4
 click==0.1
 colorama==0.3.1
 itsdangerous==0.24
+pyglet==1.2alpha1
 wsgiref==0.1.2

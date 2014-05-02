@@ -47,7 +47,18 @@ def hello():
 	value = click.prompt('Lets get this arty started, or what?', type=int)
 
 	print(Fore.RED + holder[value - 1])
-	print "Playing..."
+	
+	print os.getcwd()
 
+	os.chdir(str(os.path.join(os.path.expanduser('~'), 'Groove/Local/')))
+	print os.getcwd()
+	print os.listdir(os.getcwd())
+
+	import pyglet
+	music = pyglet.resource.media("ball.wav")
+	music.play()
+
+	pyglet.app.run()
+	
 if __name__ == '__main__':
 	hello()
