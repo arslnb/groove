@@ -58,7 +58,7 @@ def hello():
 	music = pyglet.resource.media("ball.wav")
 	music.play()
 
-	pyglet.app.run()
-	
+
+
 if __name__ == '__main__':
 	hello()
