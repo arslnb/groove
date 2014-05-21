@@ -13,6 +13,7 @@ import click
 import time
 import sys
 import os
+import subprocess
 from colorama import init, Fore, Back, Style
 init()
 
@@ -44,19 +45,14 @@ def hello():
 			print(Fore.CYAN + file)
 			holder.append(file)
 
+	print "\n"
 	value = click.prompt('Lets get this arty started, or what?', type=int)
 
 	print(Fore.RED + holder[value - 1])
 	
-	print os.getcwd()
-
 	os.chdir(str(os.path.join(os.path.expanduser('~'), 'Groove/Local/')))
-	print os.getcwd()
-	print os.listdir(os.getcwd())
-
-	import pyglet
-	music = pyglet.resource.media("ball.wav")
-	music.play()
+	track_directory = os.path.join(os.getcwd(), holder[value - 1])
+	return_code = subprocess.call(["afplay", track_directory])
 
 
 
