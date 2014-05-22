@@ -47,8 +47,9 @@ def hello():
 
 	print "\n"
 	value = click.prompt('Lets get this arty started, or what?', type=int)
-
-	print(Fore.RED + holder[value - 1])
+	print "\n"
+	message = "Now Jamming - %s" % holder[value - 1]
+	print(Fore.RED + message)
 	
 	os.chdir(str(os.path.join(os.path.expanduser('~'), 'Groove/Local/')))
 	track_directory = os.path.join(os.getcwd(), holder[value - 1])
